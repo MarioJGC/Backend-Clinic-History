@@ -7,17 +7,18 @@ import { EpicrisisModule } from './epicrisis/epicrisis.module';
 import { NotasEvolutivasModule } from './notas-evolutivas/notas-evolutivas.module';
 import { InterpretacionModule } from './interpretacion/interpretacion.module';
 import { NotaModule } from './nota/nota.module';
+import { DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT } from './config';
 
 @Module({
   imports: [
     HistoriaModule,
     TypeOrmModule.forRoot({
       type: "mysql",
-      host: "localhost",
-      port: 3307,
-      username: "root_user",
-      password: "root",
-      database: "hc_database",
+      host: DB_HOST,
+      port: DB_PORT,
+      username: DB_USER,
+      password: DB_PASSWORD,
+      database: DB_NAME,
       //entities: [],
       autoLoadEntities: true,
       synchronize: true,
